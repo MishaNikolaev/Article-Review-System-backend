@@ -1,15 +1,15 @@
-@URL = http://localhost:5136
+@URL = http://localhost:5000
 
 ### Register
 POST {{URL}}/api/auth/register
 Content-Type: application/json
 
 {
-  "firstName": "Vladislav",
+  "firstName": "Vladislavv",
   "lastName": "Koptsev",
   "gender": "male",
-  "email": "firamir@mail.ru",
-  "password": "qw123"
+  "email": "firamirr@mail.ru",
+  "password": "fuuck_w123"
 }
 
 ### Login
@@ -17,6 +17,6 @@ POST {{URL}}/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "firamir@mail.ru",
-  "password": "qw123"
+  "email": "firamirr@mail.ru",
+  "password": "fuuck_qw123_blyad"
 }
