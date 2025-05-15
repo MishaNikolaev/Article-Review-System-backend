@@ -1,37 +1,22 @@
 @URL = http://localhost:5136
 
-//старые requests пофиг пока на них 
-###
-GET {{URL}}/comments
-Accept: application/json
-
-### 
-GET {{URL}}/comments/1
-Accept: application/json
-
-### 
-POST {{URL}}/comments
+### Register
+POST {{URL}}/api/auth/register
 Content-Type: application/json
 
 {
-  "Id":1,
-  "name": "Glebasik",
-  "email": "firamir@vou.ru",
-  "body": "ufk firamir ura",
-  "postId": 1
+  "firstName": "Vladislav",
+  "lastName": "Koptsev",
+  "gender": "male",
+  "email": "firamir@mail.ru",
+  "password": "qw123"
 }
 
-###
-PATCH {{URL}}/comments/1
+### Login
+POST {{URL}}/api/auth/login
 Content-Type: application/json
 
 {
-  "Id":1,
-  "name": "Glebasssik",
-  "email": "firamir@vou.ru",
-  "body": "ufk firamir ura",
-  "postId": 1
+  "email": "firamir@mail.ru",
+  "password": "qw123"
 }
-
-### 
-DELETE {{URL}}/comments/1

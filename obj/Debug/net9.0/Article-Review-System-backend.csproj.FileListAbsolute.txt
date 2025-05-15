@@ -1,15 +1,136 @@
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.AssemblyInfoInputs.cache
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.AssemblyInfo.cs
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.csproj.CoreCompileInputs.cache
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.sourcelink.json
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.exe
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.deps.json
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.runtimeconfig.json
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.dll
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.pdb
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.dll
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\refint\Article-Review-System-backend.dll
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.pdb
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.genruntimeconfig.cache
-C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\ref\Article-Review-System-backend.dll
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.AssemblyInfoInputs.cache
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.AssemblyInfo.cs
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.csproj.CoreCompileInputs.cache
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.sourcelink.json
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.exe
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.deps.json
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.runtimeconfig.json
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.dll
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.pdb
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.dll
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/refint/Article-Review-System-backend.dll
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.pdb
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.genruntimeconfig.cache
+C:/Users/HUAWEI/study at sibsutis/4 семестр/визуал прог/Article-Review-System-backend/obj/Debug/net9.0/ref/Article-Review-System-backend.dll
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.csproj.AssemblyReference.cache
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.AssemblyInfoInputs.cache
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.AssemblyInfo.cs
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.csproj.CoreCompileInputs.cache
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.sourcelink.json
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.dll
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/refint/Article-Review-System-backend.dll
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.pdb
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.deps.json
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.runtimeconfig.json
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Article-Review-System-backend.pdb
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Humanizer.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.AspNetCore.Razor.Language.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Build.Locator.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.CSharp.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.Razor.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Mono.TextTemplating.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Newtonsoft.Json.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Newtonsoft.Json.Bson.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Npgsql.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.CodeDom.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.Composition.AttributedModel.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.Composition.Convention.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.Composition.Hosting.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.Composition.Runtime.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.Composition.TypedParts.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/System.Text.Json.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-.7699775C.Up2Date
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/Article-Review-System-backend.genruntimeconfig.cache
+/Users/nmichail/Article-Review-System-backend/obj/Debug/net9.0/ref/Article-Review-System-backend.dll
