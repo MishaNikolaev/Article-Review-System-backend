@@ -1,0 +1,37 @@
+@URL = http://localhost:5136
+
+//старые requests пофиг пока на них 
+###
+GET {{URL}}/comments
+Accept: application/json
+
+### 
+GET {{URL}}/comments/1
+Accept: application/json
+
+### 
+POST {{URL}}/comments
+Content-Type: application/json
+
+{
+  "Id":1,
+  "name": "Glebasik",
+  "email": "firamir@vou.ru",
+  "body": "ufk firamir ura",
+  "postId": 1
+}
+
+###
+PATCH {{URL}}/comments/1
+Content-Type: application/json
+
+{
+  "Id":1,
+  "name": "Glebasssik",
+  "email": "firamir@vou.ru",
+  "body": "ufk firamir ura",
+  "postId": 1
+}
+
+### 
+DELETE {{URL}}/comments/1

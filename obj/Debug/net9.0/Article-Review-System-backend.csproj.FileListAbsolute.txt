@@ -1,0 +1,15 @@
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.AssemblyInfoInputs.cache
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.AssemblyInfo.cs
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.csproj.CoreCompileInputs.cache
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.sourcelink.json
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.exe
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.deps.json
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.runtimeconfig.json
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.dll
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\bin\Debug\net9.0\Article-Review-System-backend.pdb
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.dll
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\refint\Article-Review-System-backend.dll
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.pdb
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\Article-Review-System-backend.genruntimeconfig.cache
+C:\Users\HUAWEI\study at sibsutis\4 семестр\визуал прог\Article-Review-System-backend\obj\Debug\net9.0\ref\Article-Review-System-backend.dll
