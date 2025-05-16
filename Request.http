@@ -5,11 +5,11 @@ POST {{URL}}/api/auth/register
 Content-Type: application/json
 
 {
-  "firstName": "Firamir",
-  "lastName": "Vau",
+  "firstName": "Test",
+  "lastName": "Testov",
   "gender": "male",
-  "email": "firarmirr@mail.ru",
-  "password": "fuuck_w123"
+  "email": "text@mail.ru",
+  "password": "123456789"
 }
 
 ### Login
@@ -17,6 +17,6 @@ POST {{URL}}/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "firarmirr@mail.ru",
-  "password": "fuuck_qw123_blyad"
+  "email": "text@mail.ru",
+  "password": "123456789"
 }
