@@ -16,8 +16,11 @@ Console.WriteLine("connection: " +
 
 builder.Services.AddControllers();
 
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+  //                     ?? throw new InvalidOperationException("Connection string is not set");
+
 //builder.Services.AddDbContext<AppDbContext>(options =>
-//    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+//    options.UseNpgsql(connectionString));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql("Host=localhost;Port=5432;Database=articleDB;Username=postgres;Password=qw123"));
