@@ -18,6 +18,11 @@ namespace Article_Review_System_backend.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 var response = await _authService.RegisterAsync(request);
@@ -26,6 +31,10 @@ namespace Article_Review_System_backend.Controllers
             catch (ApplicationException ex)
             {
                 return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Internal server error", detail = ex.Message });
             }
         }
 
@@ -40,6 +49,10 @@ namespace Article_Review_System_backend.Controllers
             catch (ApplicationException ex)
             {
                 return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)  
+            {
+                return StatusCode(500, new { message = "Internal server error", detail = ex.Message });
             }
         }
     }
