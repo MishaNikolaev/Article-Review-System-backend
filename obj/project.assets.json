@@ -5218,19 +5218,24 @@
     ]
   },
   "packageFolders": {
-    "/Users/nmichail/.nuget/packages/": {}
+    "C:\\Users\\HUAWEI\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nmichail/Article-Review-System-backend/Article-Review-System-backend.csproj",
+      "projectUniqueName": "C:\\Users\\HUAWEI\\Article-Review-System-backend\\Article-Review-System-backend.csproj",
       "projectName": "Article-Review-System-backend",
-      "projectPath": "/Users/nmichail/Article-Review-System-backend/Article-Review-System-backend.csproj",
-      "packagesPath": "/Users/nmichail/.nuget/packages/",
-      "outputPath": "/Users/nmichail/Article-Review-System-backend/obj/",
+      "projectPath": "C:\\Users\\HUAWEI\\Article-Review-System-backend\\Article-Review-System-backend.csproj",
+      "packagesPath": "C:\\Users\\HUAWEI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HUAWEI\\Article-Review-System-backend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/nmichail/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\HUAWEI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -5298,7 +5303,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
