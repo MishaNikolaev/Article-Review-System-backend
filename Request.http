@@ -5,10 +5,10 @@ POST {{URL}}/api/auth/register
 Content-Type: application/json
 
 {
-  "firstName": "Test",
-  "lastName": "Testov",
+  "firstName": "Tesr",
+  "lastName": "Tesrov",
   "gender": "male",
-  "email": "text@mail.ru",
+  "email": "teet@mail.ru",
   "password": "123456789"
 }
 
@@ -17,6 +17,6 @@ POST {{URL}}/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "text@mail.ru",
+  "email": "teet@mail.ru",
   "password": "123456789"
 }
