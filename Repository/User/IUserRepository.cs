@@ -1,4 +1,3 @@
-// Repository/User/IUserRepository.cs
 using Article_Review_System_backend.Models;
 
 namespace Article_Review_System_backend.Repository.User
@@ -8,5 +7,7 @@ namespace Article_Review_System_backend.Repository.User
         Task<Models.User> CreateUserAsync(Models.User user);
         Task<Models.User?> GetUserByEmailAsync(string email);
         Task<bool> UserExistsAsync(string email);
+        Task<Models.User?> GetUserByIdAsync(int id); 
+        Task UpdateUserAsync(Models.User user);
     }
 }

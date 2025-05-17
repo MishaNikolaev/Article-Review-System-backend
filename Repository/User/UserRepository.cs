@@ -47,5 +47,22 @@ namespace Article_Review_System_backend.Repository
             return await _context.Users
                 .AnyAsync(u => u.Email == email);
         }
+
+        public async Task<Models.User?> GetUserByIdAsync(int id)
+        {
+            return await _context.Users
+                .FirstOrDefaultAsync(u => u.Id == id);
+        }
+
+        public async Task UpdateUserAsync(Models.User user)
+        {
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }

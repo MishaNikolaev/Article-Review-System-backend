@@ -27,9 +27,15 @@ namespace Article_Review_System_backend.Models
         [Required]
         public byte[] PasswordSalt { get; set; }
         
+        public string? Specialization { get; set; }
+        public string? Location { get; set; }
+        public string? Bio { get; set; }
+        public string? Twitter { get; set; }
+        public string? LinkedIn { get; set; }
+        public string? AvatarUrl { get; set; }
+        public string Role { get; set; } = "Author";
+        
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }
-
-

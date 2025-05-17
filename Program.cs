@@ -91,6 +91,55 @@ app.MapPost("/api/auth/login", async (LoginRequest request, IAuthService authSer
     }
 }).Accepts<LoginRequest>("application/json");
 
+app.MapPost("/api/user/avatar", async (IFormFile file, IUserRepository userRepository, int userId) =>
+{
+    if (file == null || file.Length == 0)
+    {
+        return Results.BadRequest("No file uploaded");
+    }
+
+    var user = await userRepository.GetUserByIdAsync(userId);
+    if (user == null)
+    {
+        return Results.NotFound("User not found");
+    }
+
+    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+    var filePath = Path.Combine("wwwroot/avatars", fileName);
+
+    using (var stream = new FileStream(filePath, FileMode.Create))
+    {
+        await file.CopyToAsync(stream);
+    }
+
+    user.AvatarUrl = $"/avatars/{fileName}";
+    await userRepository.UpdateUserAsync(user);
+
+    return Results.Ok(new { AvatarUrl = user.AvatarUrl });
+});
+
+app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserRepository userRepository) =>
+{
+    var user = await userRepository.GetUserByIdAsync(request.Id);
+    if (user == null)
+    {
+        return Results.NotFound("User not found");
+    }
+
+    user.FirstName = request.FirstName;
+    user.LastName = request.LastName;
+    user.Email = request.Email;
+    user.Specialization = request.Specialization;
+    user.Location = request.Location;
+    user.Bio = request.Bio;
+    user.Twitter = request.Twitter;
+    user.LinkedIn = request.LinkedIn;
+    user.UpdatedAt = DateTime.UtcNow;
+
+    await userRepository.UpdateUserAsync(user);
+    return Results.Ok(user);
+}).Accepts<ProfileUpdateRequest>("application/json");
+
 app.MapGet("/", () => "Article Review System API is running!");
 
 app.Run();

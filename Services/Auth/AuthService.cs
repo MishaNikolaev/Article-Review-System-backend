@@ -47,27 +47,34 @@ namespace Article_Review_System_backend.Services
         }
 
         public async Task<AuthResponse> LoginAsync(LoginRequest request)
-        {
-            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+{
+    var user = await _userRepository.GetUserByEmailAsync(request.Email);
 
-            if (user == null)
-            {
-                throw new ApplicationException("User not found");
-            }
+    if (user == null)
+    {
+        throw new ApplicationException("User not found");
+    }
 
-            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-            {
-                throw new ApplicationException("Password is incorrect");
-            }
+    if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+    {
+        throw new ApplicationException("Password is incorrect");
+    }
 
-            return new AuthResponse
-            {
-                Id = user.Id,
-                Email = user.Email,
-                FirstName = user.FirstName,
-                LastName = user.LastName
-            };
-        }
+    return new AuthResponse
+    {
+        Id = user.Id,
+        Email = user.Email,
+        FirstName = user.FirstName,
+        LastName = user.LastName,
+        Role = user.Role,
+        Specialization = user.Specialization,
+        Location = user.Location,
+        Bio = user.Bio,
+        Twitter = user.Twitter,
+        LinkedIn = user.LinkedIn,
+        AvatarUrl = user.AvatarUrl
+    };
+}
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
