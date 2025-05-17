@@ -17,34 +17,40 @@ namespace Article_Review_System_backend.Services
         }
 
         public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
-        {
-            if (await _userRepository.UserExistsAsync(request.Email))
-            {
-                throw new ApplicationException("Email already exists");
-            }
+{
+    if (await _userRepository.UserExistsAsync(request.Email))
+    {
+        throw new ApplicationException("Email already exists");
+    }
 
-            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
+    CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
-            var user = new User
-            {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                Gender = request.Gender,
-                Email = request.Email,
-                PasswordHash = passwordHash,
-                PasswordSalt = passwordSalt
-            };
+    var avatarUrl = $"https://api.dicebear.com/7.x/initials/svg?seed={request.FirstName}+{request.LastName}";
 
-            var createdUser = await _userRepository.CreateUserAsync(user);
+    var user = new User
+    {
+        FirstName = request.FirstName,
+        LastName = request.LastName,
+        Gender = request.Gender,
+        Email = request.Email,
+        PasswordHash = passwordHash,
+        PasswordSalt = passwordSalt,
+        AvatarUrl = avatarUrl
+    };
 
-            return new AuthResponse
-            {
-                Id = createdUser.Id,
-                Email = createdUser.Email,
-                FirstName = createdUser.FirstName,
-                LastName = createdUser.LastName
-            };
-        }
+    var createdUser = await _userRepository.CreateUserAsync(user);
+
+    return new AuthResponse
+    {
+        Id = createdUser.Id,
+        Email = createdUser.Email,
+        FirstName = createdUser.FirstName,
+        LastName = createdUser.LastName,
+        Role = createdUser.Role,
+        AvatarUrl = createdUser.AvatarUrl
+    };
+}
+
 
         public async Task<AuthResponse> LoginAsync(LoginRequest request)
 {

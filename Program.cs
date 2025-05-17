@@ -137,8 +137,23 @@ app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserReposi
     user.UpdatedAt = DateTime.UtcNow;
 
     await userRepository.UpdateUserAsync(user);
-    return Results.Ok(user);
+
+    return Results.Ok(new
+    {
+        Id = user.Id,
+        FirstName = user.FirstName,
+        LastName = user.LastName,
+        Email = user.Email,
+        Role = user.Role,
+        Specialization = user.Specialization,
+        Location = user.Location,
+        Bio = user.Bio,
+        Twitter = user.Twitter,
+        LinkedIn = user.LinkedIn,
+        AvatarUrl = user.AvatarUrl
+    });
 }).Accepts<ProfileUpdateRequest>("application/json");
+
 
 app.MapGet("/", () => "Article Review System API is running!");
 
