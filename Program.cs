@@ -192,9 +192,9 @@ app.MapGet("/api/articles/my-articles/{authorId}", async (int authorId, IArticle
     }
 });
 
-app.MapPost("/api/articles/upload-image", async (IFormFile file) => 
+app.MapPost("/api/articles/upload-image", async (IFormFile file) =>
 {
-    try 
+    try
     {
         if (file == null || file.Length == 0)
         {
@@ -219,6 +219,15 @@ app.MapPost("/api/articles/upload-image", async (IFormFile file) =>
         return Results.StatusCode(500);
     }
 });
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var userRepository = services.GetRequiredService<IUserRepository>();
+    var configuration = services.GetRequiredService<IConfiguration>();
+
+    await AdminSeeder.SeedAdminAsync(userRepository, configuration);
+}
 
 app.UseStaticFiles();
 
