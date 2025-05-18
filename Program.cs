@@ -7,9 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
+using Article_Review_System_backend.Models;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +42,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<IArticleService, ArticleService>();
+
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
@@ -154,6 +159,68 @@ app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserReposi
     });
 }).Accepts<ProfileUpdateRequest>("application/json");
 
+app.MapPost("/api/articles/submit", async (ArticleRequest request, IArticleService articleService) =>
+{
+    try
+    {
+        var article = await articleService.SubmitArticleAsync(request);
+        return Results.Ok(new 
+        {
+            Id = article.Id,
+            Title = article.Title,
+            SubmittedDate = article.SubmittedDate.ToString("MMMM d, yyyy"),
+            Category = article.Category,
+            Status = article.Status
+        });
+    }
+    catch (ApplicationException ex)
+    {
+        return Results.BadRequest(new { message = ex.Message });
+    }
+}).Accepts<ArticleRequest>("application/json");
+
+app.MapGet("/api/articles/my-articles/{authorId}", async (int authorId, IArticleService articleService) =>
+{
+    try
+    {
+        var articles = await articleService.GetUserArticlesAsync(authorId);
+        return Results.Ok(articles);
+    }
+    catch (ApplicationException ex)
+    {
+        return Results.BadRequest(new { message = ex.Message });
+    }
+});
+
+app.MapPost("/api/articles/upload-image", async (IFormFile file) => 
+{
+    try 
+    {
+        if (file == null || file.Length == 0)
+        {
+            return Results.BadRequest("No file uploaded");
+        }
+
+        var uploadsDir = Path.Combine("wwwroot", "article-images");
+        Directory.CreateDirectory(uploadsDir);
+
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+        var filePath = Path.Combine(uploadsDir, fileName);
+
+        await using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(stream);
+        }
+
+        return Results.Ok(new { imageUrl = $"/article-images/{fileName}" });
+    }
+    catch (Exception ex)
+    {
+        return Results.StatusCode(500);
+    }
+});
+
+app.UseStaticFiles();
 
 app.MapGet("/", () => "Article Review System API is running!");
 
