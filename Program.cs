@@ -244,7 +244,11 @@ app.MapGet("/api/users", async (AppDbContext context) =>
                 u.IsBlocked
             })
             .ToListAsync();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 5994cf11d0a6dd5b88d23a140a57cdb78bef13bc
         return Results.Ok(users);
     }
     catch (Exception ex)
@@ -252,6 +256,7 @@ app.MapGet("/api/users", async (AppDbContext context) =>
         return Results.Problem($"An error occurred: {ex.Message}");
     }
 });
+<<<<<<< HEAD
 app.MapGet("/api/reviews", async (AppDbContext context) =>
 {
     try
@@ -281,6 +286,9 @@ app.MapGet("/api/reviews", async (AppDbContext context) =>
         return Results.Problem($"An error occurred: {ex.Message}");
     }
 });
+=======
+
+>>>>>>> 5994cf11d0a6dd5b88d23a140a57cdb78bef13bc
 app.MapPut("/api/users/{id}/block", async (int id, AppDbContext context, HttpRequest request) =>
 {
     var user = await context.Users.FindAsync(id);
@@ -289,7 +297,11 @@ app.MapPut("/api/users/{id}/block", async (int id, AppDbContext context, HttpReq
 
     var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
     var json = JsonSerializer.Deserialize<Dictionary<string, bool>>(requestBody);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 5994cf11d0a6dd5b88d23a140a57cdb78bef13bc
     if (json == null || !json.ContainsKey("isBlocked"))
         return Results.BadRequest("Missing isBlocked property");
 
@@ -307,7 +319,11 @@ app.MapPut("/api/users/{id}/role", async (int id, AppDbContext context, HttpRequ
 
     var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
     var json = JsonSerializer.Deserialize<Dictionary<string, string>>(requestBody);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 5994cf11d0a6dd5b88d23a140a57cdb78bef13bc
     if (json == null || !json.ContainsKey("role"))
         return Results.BadRequest("Missing role property");
 
