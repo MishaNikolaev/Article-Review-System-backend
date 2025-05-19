@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nmichail/Article-Review-System-backend/Article-Review-System-backend.csproj": {}
+    "D:\\Teaching\\visual_proj\\Article-Review-System-backend\\Article-Review-System-backend.csproj": {}
   },
   "projects": {
-    "/Users/nmichail/Article-Review-System-backend/Article-Review-System-backend.csproj": {
+    "D:\\Teaching\\visual_proj\\Article-Review-System-backend\\Article-Review-System-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nmichail/Article-Review-System-backend/Article-Review-System-backend.csproj",
+        "projectUniqueName": "D:\\Teaching\\visual_proj\\Article-Review-System-backend\\Article-Review-System-backend.csproj",
         "projectName": "Article-Review-System-backend",
-        "projectPath": "/Users/nmichail/Article-Review-System-backend/Article-Review-System-backend.csproj",
-        "packagesPath": "/Users/nmichail/.nuget/packages/",
-        "outputPath": "/Users/nmichail/Article-Review-System-backend/obj/",
+        "projectPath": "D:\\Teaching\\visual_proj\\Article-Review-System-backend\\Article-Review-System-backend.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Teaching\\visual_proj\\Article-Review-System-backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/nmichail/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -82,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -20,7 +20,7 @@ builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
 
-Console.WriteLine("connection: " + 
+Console.WriteLine("connection: " +
                   builder.Configuration.GetConnectionString("DefaultConnection"));
 
 
@@ -34,7 +34,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                        ?? throw new InvalidOperationException("Connection string is not set");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -123,6 +123,20 @@ app.MapPost("/api/user/avatar", async (IFormFile file, IUserRepository userRepos
     return Results.Ok(new { AvatarUrl = user.AvatarUrl });
 });
 
+app.MapPost("/api/user/reviews", async (int reviewId, IUserRepository userRepository, int userId) =>
+{
+    var user = await userRepository.GetUserByIdAsync(userId);
+    if (user == null)
+    {
+        return Results.NotFound("User not found");
+    }
+
+    user.Reviews.Add(reviewId);
+    await userRepository.UpdateUserAsync(user);
+
+    return Results.Ok(new { Reviews = user.Reviews });
+});
+
 app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserRepository userRepository) =>
 {
     var user = await userRepository.GetUserByIdAsync(request.Id);
@@ -155,7 +169,7 @@ app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserReposi
         Bio = user.Bio,
         Twitter = user.Twitter,
         LinkedIn = user.LinkedIn,
-        AvatarUrl = user.AvatarUrl
+        AvatarUrl = user.AvatarUrl,
     });
 }).Accepts<ProfileUpdateRequest>("application/json");
 
@@ -164,7 +178,7 @@ app.MapPost("/api/articles/submit", async (ArticleRequest request, IArticleServi
     try
     {
         var article = await articleService.SubmitArticleAsync(request);
-        return Results.Ok(new 
+        return Results.Ok(new
         {
             Id = article.Id,
             Title = article.Title,
@@ -232,7 +246,8 @@ app.MapPost("/api/articles/upload-file", async (IFormFile file) =>
         await using (var stream = new FileStream(filePath, FileMode.Create))
             await file.CopyToAsync(stream);
 
-        return Results.Ok(new {
+        return Results.Ok(new
+        {
             fileUrl = $"/article-files/{fileName}",
             originalFileName = file.FileName
         });
