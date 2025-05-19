@@ -52,7 +52,8 @@ namespace Article_Review_System_backend.Migrations
                     Tags = table.Column<string>(type: "text", nullable: true),
                     Status = table.Column<string>(type: "text", nullable: false),
                     SubmittedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    AuthorId = table.Column<int>(type: "integer", nullable: false)
+                    AuthorId = table.Column<int>(type: "integer", nullable: false),
+                    AttachmentUrl = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

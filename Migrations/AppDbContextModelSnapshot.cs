@@ -30,6 +30,9 @@ namespace Article_Review_System_backend.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AttachmentUrl")
+                        .HasColumnType("text");
+
                     b.Property<int>("AuthorId")
                         .HasColumnType("integer");
 

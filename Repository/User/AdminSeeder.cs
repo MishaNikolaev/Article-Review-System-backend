@@ -21,6 +21,8 @@ namespace Article_Review_System_backend.Repository.User
 
             var existingAdmin = await userRepository.GetUserByEmailAsync(email);
             if (existingAdmin != null) return;
+            Console.WriteLine("Admin already exists: " + email);
+
 
             using var hmac = new HMACSHA512();
             var passwordSalt = hmac.Key;
@@ -36,6 +38,8 @@ namespace Article_Review_System_backend.Repository.User
                 PasswordSalt = passwordSalt,
                 Role = "Admin"
             };
+            Console.WriteLine("Admin created with email: " + email);
+
 
             await userRepository.CreateUserAsync(adminUser);
         }

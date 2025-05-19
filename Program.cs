@@ -197,9 +197,7 @@ app.MapPost("/api/articles/upload-image", async (IFormFile file) =>
     try
     {
         if (file == null || file.Length == 0)
-        {
             return Results.BadRequest("No file uploaded");
-        }
 
         var uploadsDir = Path.Combine("wwwroot", "article-images");
         Directory.CreateDirectory(uploadsDir);
@@ -208,17 +206,42 @@ app.MapPost("/api/articles/upload-image", async (IFormFile file) =>
         var filePath = Path.Combine(uploadsDir, fileName);
 
         await using (var stream = new FileStream(filePath, FileMode.Create))
-        {
             await file.CopyToAsync(stream);
-        }
 
         return Results.Ok(new { imageUrl = $"/article-images/{fileName}" });
     }
-    catch (Exception ex)
+    catch
     {
         return Results.StatusCode(500);
     }
-});
+}).DisableAntiforgery();
+
+app.MapPost("/api/articles/upload-file", async (IFormFile file) =>
+{
+    try
+    {
+        if (file == null || file.Length == 0)
+            return Results.BadRequest("No file uploaded");
+
+        var uploadsDir = Path.Combine("wwwroot", "article-files");
+        Directory.CreateDirectory(uploadsDir);
+
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+        var filePath = Path.Combine(uploadsDir, fileName);
+
+        await using (var stream = new FileStream(filePath, FileMode.Create))
+            await file.CopyToAsync(stream);
+
+        return Results.Ok(new {
+            fileUrl = $"/article-files/{fileName}",
+            originalFileName = file.FileName
+        });
+    }
+    catch
+    {
+        return Results.StatusCode(500);
+    }
+}).DisableAntiforgery();
 
 using (var scope = app.Services.CreateScope())
 {
