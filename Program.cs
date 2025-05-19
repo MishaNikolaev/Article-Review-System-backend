@@ -1,6 +1,7 @@
 ﻿using Article_Review_System_backend.Data;
 using Article_Review_System_backend.Repository;
 using Article_Review_System_backend.Repository.User;
+using Article_Review_System_backend.Repository.Review;
 using Article_Review_System_backend.Services;
 using Article_Review_System_backend.Models.Auth;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IArticleService, ArticleService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 builder.Services.AddAuthorization();
 
@@ -123,8 +125,13 @@ app.MapPost("/api/user/avatar", async (IFormFile file, IUserRepository userRepos
 
     return Results.Ok(new { AvatarUrl = user.AvatarUrl });
 });
+app.MapPost("/api/user/reviews", async (ReviewRequest review, IReviewService reviewService, int articleId) =>
+{
+    await reviewService.SubmitReviewAsync(review);
 
-app.MapPost("/api/user/reviews", async (int reviewId, IUserRepository userRepository, int userId) =>
+    return Results.Ok(new { });
+});
+app.MapPost("/api/user/{userId}/reviews", async (int reviewId, IUserRepository userRepository, int userId) =>
 {
     var user = await userRepository.GetUserByIdAsync(userId);
     if (user == null)
@@ -136,6 +143,19 @@ app.MapPost("/api/user/reviews", async (int reviewId, IUserRepository userReposi
     await userRepository.UpdateUserAsync(user);
 
     return Results.Ok(new { Reviews = user.Reviews });
+});
+app.MapPost("/api/users/{userId}/reviews-text", async (List<int> reviewText, IUserRepository userRepository, int userId) =>
+{
+    var user = await userRepository.GetUserByIdAsync(userId);
+    if (user == null)
+    {
+        return Results.NotFound("User not found");
+    }
+
+    user.ReviewsFinished = reviewText;
+    await userRepository.UpdateUserAsync(user);
+
+    return Results.Ok(new { ReviewsYf = user.ReviewsFinished });
 });
 
 app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserRepository userRepository) =>
@@ -224,7 +244,7 @@ app.MapGet("/api/users", async (AppDbContext context) =>
                 u.IsBlocked
             })
             .ToListAsync();
-        
+
         return Results.Ok(users);
     }
     catch (Exception ex)
@@ -232,7 +252,35 @@ app.MapGet("/api/users", async (AppDbContext context) =>
         return Results.Problem($"An error occurred: {ex.Message}");
     }
 });
+app.MapGet("/api/reviews", async (AppDbContext context) =>
+{
+    try
+    {
+        var users = await context.Reviews
+            .Select(u => new
+            {
+                u.Id,
+                u.ArticleBase,
+                u.Author,
+                u.Status,
+                u.DueDate,
+                u.Rating,
+                u.TechnicalMerit,
+                u.Originality,
+                u.PresentationQuality,
+                u.CommentsToAuthor,
+                u.CommentsToEditor,
+                u.AttachmentUrl,
+            })
+            .ToListAsync();
 
+        return Results.Ok(users);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem($"An error occurred: {ex.Message}");
+    }
+});
 app.MapPut("/api/users/{id}/block", async (int id, AppDbContext context, HttpRequest request) =>
 {
     var user = await context.Users.FindAsync(id);
@@ -241,7 +289,7 @@ app.MapPut("/api/users/{id}/block", async (int id, AppDbContext context, HttpReq
 
     var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
     var json = JsonSerializer.Deserialize<Dictionary<string, bool>>(requestBody);
-    
+
     if (json == null || !json.ContainsKey("isBlocked"))
         return Results.BadRequest("Missing isBlocked property");
 
@@ -259,7 +307,7 @@ app.MapPut("/api/users/{id}/role", async (int id, AppDbContext context, HttpRequ
 
     var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
     var json = JsonSerializer.Deserialize<Dictionary<string, string>>(requestBody);
-    
+
     if (json == null || !json.ContainsKey("role"))
         return Results.BadRequest("Missing role property");
 

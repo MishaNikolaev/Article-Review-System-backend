@@ -43,5 +43,7 @@ namespace Article_Review_System_backend.Models
 
         public List<int> Reviews { get; set; } = [];
 
+        public List<int> ReviewsFinished { get; set; } = [];
+
     }
 }

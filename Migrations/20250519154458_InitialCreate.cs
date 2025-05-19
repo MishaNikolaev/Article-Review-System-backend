@@ -32,9 +32,11 @@ namespace Article_Review_System_backend.Migrations
                     LinkedIn = table.Column<string>(type: "text", nullable: true),
                     AvatarUrl = table.Column<string>(type: "text", nullable: true),
                     Role = table.Column<string>(type: "text", nullable: false),
+                    IsBlocked = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Reviews = table.Column<List<int>>(type: "integer[]", nullable: false)
+                    Reviews = table.Column<List<int>>(type: "integer[]", nullable: false),
+                    ReviewsFinished = table.Column<List<int>>(type: "integer[]", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,15 +70,63 @@ namespace Article_Review_System_backend.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ArticleId = table.Column<int>(type: "integer", nullable: false),
+                    AuthorId = table.Column<int>(type: "integer", nullable: false),
+                    Status = table.Column<string>(type: "text", nullable: false),
+                    DueDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Rating = table.Column<int>(type: "integer", nullable: false),
+                    TechnicalMerit = table.Column<string>(type: "text", nullable: true),
+                    Originality = table.Column<string>(type: "text", nullable: true),
+                    PresentationQuality = table.Column<string>(type: "text", nullable: true),
+                    CommentsToAuthor = table.Column<string>(type: "text", nullable: true),
+                    CommentsToEditor = table.Column<string>(type: "text", nullable: true),
+                    AttachmentUrl = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Articles_ArticleId",
+                        column: x => x.ArticleId,
+                        principalTable: "Articles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Users_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_AuthorId",
                 table: "Articles",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_ArticleId",
+                table: "Reviews",
+                column: "ArticleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_AuthorId",
+                table: "Reviews",
                 column: "AuthorId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Reviews");
+
             migrationBuilder.DropTable(
                 name: "Articles");
 
