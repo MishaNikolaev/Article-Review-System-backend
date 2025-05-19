@@ -35,6 +35,9 @@ namespace Article_Review_System_backend.Models
         public string? AvatarUrl { get; set; }
         public string Role { get; set; } = "Author";
 
+        public bool IsBlocked { get; set; } = false;
+
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
