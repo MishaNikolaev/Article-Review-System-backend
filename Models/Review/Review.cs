@@ -6,6 +6,7 @@ namespace Article_Review_System_backend.Models
     {
         [Key]
         public int Id { get; set; }
+        public int ReviewerId { get; set; }
         [Required]
         public int ArticleId { get; set; }
         [Required]
@@ -20,13 +21,13 @@ namespace Article_Review_System_backend.Models
         [Required]
         public DateTime DueDate { get; set; }
 
-        public int Rating { get; set; }
+        public int Rating { get; set; } = 0;
 
-        public string? TechnicalMerit { get; set; }
-        public string? Originality { get; set; }
-        public string? PresentationQuality { get; set; }
-        public string? CommentsToAuthor { get; set; }
-        public string? CommentsToEditor { get; set; }
-        public string? AttachmentUrl { get; set; }
+        public string? TechnicalMerit { get; set; } = "";
+        public string? Originality { get; set; } = "";
+        public string? PresentationQuality { get; set; } = "";
+        public string? CommentsToAuthor { get; set; } = "";
+        public string? CommentsToEditor { get; set; } = "";
+        public string? AttachmentUrl { get; set; } = "";
     }
 }

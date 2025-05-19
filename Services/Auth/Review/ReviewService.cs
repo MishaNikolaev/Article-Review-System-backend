@@ -24,6 +24,7 @@ namespace Article_Review_System_backend.Services
 
             var review = new Review
             {
+                ReviewerId = request.ReviewerId,
                 ArticleId = request.ArticleId,
                 ArticleBase = article,
                 Status = request.Status,

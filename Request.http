@@ -20,3 +20,32 @@ Content-Type: application/json
   "email": "teet@mail.ru",
   "password": "123456789"
 }
+
+###
+POST {{URL}}/api/reviews
+Content-Type: application/json 
+{
+  "Id": 1,
+}
+###
+GET {{URL}}/api/reviews
+Content-Type: application/json 
+
+###
+GET {{URL}}/api/articles
+Content-Type: application/json 
+###
+GET {{URL}}/api/users
+Content-Type: application/json 
+
+###
+POST {{URL}}/api/users/reviews
+
+Content-Type: application/json
+{
+  "Id": 1,
+  "ReviewerId": 2,
+  "ArticleId": 1,
+  "Status": "sdasd",
+  "Rating": 5,
+}

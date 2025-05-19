@@ -13,7 +13,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Article_Review_System_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250519154907_InitialCreate")]
+    [Migration("20250519170205_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -105,6 +105,9 @@ namespace Article_Review_System_backend.Migrations
                         .HasColumnType("text");
 
                     b.Property<int>("Rating")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ReviewerId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Status")

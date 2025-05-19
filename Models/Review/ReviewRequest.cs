@@ -5,6 +5,7 @@ namespace Article_Review_System_backend.Models
     public class ReviewRequest
     {
         [Required]
+        public int ReviewerId { get; set; }
         public int ArticleId { get; set; }
         public string Status { get; set; }
 

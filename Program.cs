@@ -48,6 +48,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IArticleService, ArticleService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
 builder.Services.AddAuthorization();
 
@@ -125,12 +126,13 @@ app.MapPost("/api/user/avatar", async (IFormFile file, IUserRepository userRepos
 
     return Results.Ok(new { AvatarUrl = user.AvatarUrl });
 });
-app.MapPost("/api/user/reviews", async (ReviewRequest review, IReviewService reviewService, int articleId) =>
+app.MapPost("/api/users/reviews", async (ReviewRequest review, IReviewService reviewService, int articleId) =>
 {
     await reviewService.SubmitReviewAsync(review);
 
-    return Results.Ok(new { });
+    return Results.Ok(new { ReviewerId = review.ReviewerId });
 });
+/*
 app.MapPost("/api/user/{userId}/reviews", async (int reviewId, IUserRepository userRepository, int userId) =>
 {
     var user = await userRepository.GetUserByIdAsync(userId);
@@ -157,7 +159,7 @@ app.MapPost("/api/users/{userId}/reviews-text", async (List<int> reviewText, IUs
 
     return Results.Ok(new { ReviewsYf = user.ReviewsFinished });
 });
-
+*/
 app.MapPut("/api/user/profile", async (ProfileUpdateRequest request, IUserRepository userRepository) =>
 {
     var user = await userRepository.GetUserByIdAsync(request.Id);
@@ -241,11 +243,62 @@ app.MapGet("/api/users", async (AppDbContext context) =>
                 u.Role,
                 u.AvatarUrl,
                 u.Gender,
-                u.IsBlocked
+                u.IsBlocked,
+                u.Reviews,
+                u.ReviewsFinished,
             })
             .ToListAsync();
 
         return Results.Ok(users);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem($"An error occurred: {ex.Message}");
+    }
+});
+app.MapGet("/api/articles", async (AppDbContext context) =>
+{
+    try
+    {
+        var articles = await context.Articles
+            .Select(u => new
+            {
+                u.Id,
+            })
+            .ToListAsync();
+
+        return Results.Ok(articles);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem($"An error occurred: {ex.Message}");
+    }
+});
+app.MapGet("/api/reviews", async (AppDbContext context) =>
+{
+    try
+    {
+        var reviews = await context.Reviews
+            .Select(u => new
+            {
+                u.Id,
+                u.ReviewerId,
+                u.ArticleId,
+                u.ArticleBase,
+                u.Author,
+                u.Status,
+                u.DueDate,
+                u.Rating,
+                u.TechnicalMerit,
+                u.Originality,
+                u.PresentationQuality,
+                u.CommentsToAuthor,
+                u.CommentsToEditor,
+                u.AttachmentUrl,
+            })
+            .ToListAsync();
+
+        return Results.Ok(reviews);
     }
     catch (Exception ex)
     {
