@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using Article_Review_System_backend.Models;
+using System.Text.Json;
 
 
 
@@ -191,6 +192,69 @@ app.MapGet("/api/articles/my-articles/{authorId}", async (int authorId, IArticle
         return Results.BadRequest(new { message = ex.Message });
     }
 });
+
+app.MapGet("/api/users", async (AppDbContext context) =>
+{
+    try
+    {
+        var users = await context.Users
+            .Select(u => new
+            {
+                u.Id,
+                u.FirstName,
+                u.LastName,
+                u.Email,
+                u.Role,
+                u.AvatarUrl,
+                u.Gender,
+                u.IsBlocked
+            })
+            .ToListAsync();
+        
+        return Results.Ok(users);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem($"An error occurred: {ex.Message}");
+    }
+});
+
+app.MapPut("/api/users/{id}/block", async (int id, AppDbContext context, HttpRequest request) =>
+{
+    var user = await context.Users.FindAsync(id);
+    if (user == null)
+        return Results.NotFound("User not found");
+
+    var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
+    var json = JsonSerializer.Deserialize<Dictionary<string, bool>>(requestBody);
+    
+    if (json == null || !json.ContainsKey("isBlocked"))
+        return Results.BadRequest("Missing isBlocked property");
+
+    user.IsBlocked = json["isBlocked"];
+    await context.SaveChangesAsync();
+
+    return Results.Ok();
+});
+
+app.MapPut("/api/users/{id}/role", async (int id, AppDbContext context, HttpRequest request) =>
+{
+    var user = await context.Users.FindAsync(id);
+    if (user == null)
+        return Results.NotFound("User not found");
+
+    var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
+    var json = JsonSerializer.Deserialize<Dictionary<string, string>>(requestBody);
+    
+    if (json == null || !json.ContainsKey("role"))
+        return Results.BadRequest("Missing role property");
+
+    user.Role = json["role"];
+    await context.SaveChangesAsync();
+
+    return Results.Ok();
+});
+
 
 app.MapPost("/api/articles/upload-image", async (IFormFile file) =>
 {
