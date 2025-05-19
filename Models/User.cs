@@ -37,11 +37,7 @@ namespace Article_Review_System_backend.Models
 
         public bool IsBlocked { get; set; } = false;
 
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 5994cf11d0a6dd5b88d23a140a57cdb78bef13bc
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
