@@ -17,70 +17,71 @@ namespace Article_Review_System_backend.Services
         }
 
         public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
-{
-    if (await _userRepository.UserExistsAsync(request.Email))
-    {
-        throw new ApplicationException("Email already exists");
-    }
+        {
+            if (await _userRepository.UserExistsAsync(request.Email))
+            {
+                throw new ApplicationException("Email already exists");
+            }
 
-    CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
-    var avatarUrl = $"https://api.dicebear.com/7.x/initials/svg?seed={request.FirstName}+{request.LastName}";
+            var avatarUrl = $"https://api.dicebear.com/7.x/initials/svg?seed={request.FirstName}+{request.LastName}";
 
-    var user = new User
-    {
-        FirstName = request.FirstName,
-        LastName = request.LastName,
-        Gender = request.Gender,
-        Email = request.Email,
-        PasswordHash = passwordHash,
-        PasswordSalt = passwordSalt,
-        AvatarUrl = avatarUrl
-    };
+            var user = new User
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Gender = request.Gender,
+                Email = request.Email,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                AvatarUrl = avatarUrl,
+                Role = request.Role ?? "Author"
+            };
 
-    var createdUser = await _userRepository.CreateUserAsync(user);
+            var createdUser = await _userRepository.CreateUserAsync(user);
 
-    return new AuthResponse
-    {
-        Id = createdUser.Id,
-        Email = createdUser.Email,
-        FirstName = createdUser.FirstName,
-        LastName = createdUser.LastName,
-        Role = createdUser.Role,
-        AvatarUrl = createdUser.AvatarUrl
-    };
-}
-
+            return new AuthResponse
+            {
+                Id = createdUser.Id,
+                Email = createdUser.Email,
+                FirstName = createdUser.FirstName,
+                LastName = createdUser.LastName,
+                Role = createdUser.Role,
+                AvatarUrl = createdUser.AvatarUrl,
+                Gender = createdUser.Gender
+            };
+        }
 
         public async Task<AuthResponse> LoginAsync(LoginRequest request)
-{
-    var user = await _userRepository.GetUserByEmailAsync(request.Email);
+        {
+            var user = await _userRepository.GetUserByEmailAsync(request.Email);
 
-    if (user == null)
-    {
-        throw new ApplicationException("User not found");
-    }
+            if (user == null)
+            {
+                throw new ApplicationException("User not found");
+            }
 
-    if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-    {
-        throw new ApplicationException("Password is incorrect");
-    }
+            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            {
+                throw new ApplicationException("Password is incorrect");
+            }
 
-    return new AuthResponse
-    {
-        Id = user.Id,
-        Email = user.Email,
-        FirstName = user.FirstName,
-        LastName = user.LastName,
-        Role = user.Role,
-        Specialization = user.Specialization,
-        Location = user.Location,
-        Bio = user.Bio,
-        Twitter = user.Twitter,
-        LinkedIn = user.LinkedIn,
-        AvatarUrl = user.AvatarUrl
-    };
-}
+            return new AuthResponse
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Role = user.Role,
+                Specialization = user.Specialization,
+                Location = user.Location,
+                Bio = user.Bio,
+                Twitter = user.Twitter,
+                LinkedIn = user.LinkedIn,
+                AvatarUrl = user.AvatarUrl
+            };
+        }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {

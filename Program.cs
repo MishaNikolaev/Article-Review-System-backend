@@ -64,12 +64,16 @@ app.MapPost("/api/auth/register", async (RegisterRequest request, IAuthService a
 
     if (!Validator.TryValidateObject(request, context, validationResults, true))
     {
-        return Results.BadRequest(validationResults);
+        return Results.BadRequest(new { message = "Validation failed", errors = validationResults });
     }
 
     try
     {
         var response = await authService.RegisterAsync(request);
+        if (request.Role != null)
+        {
+            response.Role = request.Role;
+        }
         return Results.Ok(response);
     }
     catch (ApplicationException ex)
